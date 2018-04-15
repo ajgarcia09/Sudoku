@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/settings"
-        android:title="Settings"
+        android:title="Settings"/>
 
-        >
-        <menu>
+
+    <menu>
             <item android:id="@+id/board_size"
                 android:title="Select Board Size">
                 <menu>
@@ -42,7 +42,7 @@
 
 
         </menu>
-    </item>
+
     <item
         android:id="@+id/action_solve"
         android:title="@string/solve_name"
@@ -54,6 +54,5 @@
         android:title="@string/check_name"
         app:showAsAction="never">
     </item>
-
 
 </menu>
