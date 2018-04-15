@@ -39,6 +39,8 @@ import edu.utep.cs.cs4330.sudoku.model.Board;
  */
 public class MainActivity extends AppCompatActivity {
 
+    private String ipAddressText = "";
+    private int portNumberText = -1;
     private Board board;
 
     private BoardView boardView;
@@ -86,8 +88,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-
-
 
     //create the 3 dots
     @Override
@@ -254,6 +254,55 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.show();
     }
+
+    /*public Dialog onConnectClicked(Bundle savedInstanceState){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        //Get the layour inflater
+        LayoutInflater inflater = this.getLayoutInflater();
+
+
+
+        builder.setView(inflater.inflate(R.layout.dialog_connect, null));
+        builder.setPositiveButton("Pair", new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface dialog, int option){
+                toast("Pair clicked!");
+
+            }
+        });
+
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface dialog, int option){
+                dialog.cancel();
+            }
+        });
+        return builder.create();
+    }*/
+
+    public void connectClicked(View view){
+        //Create a pop up dialog to ask the user for data if he/she wants to connect
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+        alertDialogBuilder.setView(R.layout.dialog_connect);
+
+        alertDialogBuilder.setPositiveButton("Pair", new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface dialog, int option){
+
+                toast("Pair clicked!");
+            }
+        });
+
+        alertDialogBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface dialog, int option){
+                dialog.cancel();
+            }
+        });
+        alertDialogBuilder.show();
+
+    }
+
 
     /** Callback to be invoked when a number button is tapped.
      *
