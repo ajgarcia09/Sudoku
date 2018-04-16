@@ -39,8 +39,8 @@ import edu.utep.cs.cs4330.sudoku.model.Board;
  */
 public class MainActivity extends AppCompatActivity {
 
-    private String ipAddressText = "";
-    private int portNumberText = -1;
+    private String myDeviceIPAddress = "192.168.1.0";
+    private int myDevicePort = 8080;
     private Board board;
 
     private BoardView boardView;
@@ -284,6 +284,8 @@ public class MainActivity extends AppCompatActivity {
         //Create a pop up dialog to ask the user for data if he/she wants to connect
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
         alertDialogBuilder.setView(R.layout.dialog_connect);
+        alertDialogBuilder.setMessage("My Device IPAddress: " + myDeviceIPAddress + "\r\n" + "My Device Port: " +
+        myDevicePort);
 
         alertDialogBuilder.setPositiveButton("Pair", new DialogInterface.OnClickListener(){
             @Override
